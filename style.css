@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.large-header{
+    position: relative;
+    width: 100%;
+    background: #111;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+.demo .large-header{
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+.overlay{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    top:50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate(-50%,-50%,0);
+}
+
+.demo .main-title{
+    text-transform: uppercase;
+    /* font-size: 4.2em; */
+    letter-spacing: 0.1em;
+    font-size: 6vw;
+    margin: 0.1em;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 0 0 0.75em yellow;
+}
+
+/* .introholder{
+    border: 2px solid white;
+} */
+/* .introholder h3{
+    float: right;
+} */
+
+.thin{
+    font-size: 1.125em;
+    font-weight: 200;
+    /* border: 2px solid white; */
+    /* float: right; */
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+
+
+.infotextcontainer{
+    /* border: 2px solid white; */
+    /* background-color: white; */
+    font-family: 'Inter Tight', sans-serif;
+    color: #f9f1e9;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    border-radius: 0.5em;
+    /* box-shadow: 0 0 0.3em black; */
+    padding: 0.5em;
+    text-shadow: 0 0 1em black;
+    width: 90vw;
+   
+}
+
+@media only screen and (max-width:400px) {
+    .thin{
+      font-size: 1em;
+    }
+ }
+
+ /* .openbutton{
+   
+    width: fit-content;
+    font-size: 2em;
+    border: 2px solid black;
+    font-family: 'Oswald', sans-serif;
+    padding: 0.3em;
+    cursor: pointer;
+   
+    transition: all 0.3s ease-in-out;
+ }
+
+ .openbutton:hover{
+    color: white;
+    background: black;
+    box-shadow: 0 0 0.5em white;
+ } */
+
+ .openbutton{
+    background: none;
+    color: var(--clr-neon2);
+    /* color: #111; */
+    border-radius: 5px;
+    font-size: 2em;
+    padding: 0.25em 1.25em;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0.125em solid var(--clr-neon2);
+    text-shadow: 0 0 0.5em var(--clr-neon2);
+    box-shadow: inset 0 0 1em var(--clr-neon2), 0 0 1em var(--clr-neon2);
+    position: relative;
+    transition: background-color 100ms linear;
+    max-width: 80%;
+}
+
+.openbutton::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon2);
+    top: 110%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(0.8em) rotateX(40deg) scale(1, 0.35) translateY(-1em);
+    filter: blur(1.3em);
+    opacity: 0.7;
+    /* visibility: hidden; */
+}
+
+.openbutton:hover{
+    background: var(--clr-neon2);
+    color: #000;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon2);
+}
+
+
+
+ .modal{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 800px;
+    max-width: 90%;
+    /* height: fit-content; */
+    transition: 200ms ease-in-out;
+ }
+ .modal.active{
+    transform: translate(-50%, -50%) scale(1);
+ }
+ .closebutton{
+    float: right;
+    cursor: pointer;
+    /* border: 1px solid black; */
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    /* padding: 0.3em; */
+    /* background-color: #fff; */
+    color: #f9f1e9;
+    margin-right: 0.05em;
+ }
+ .modalheader{
+    color: white;
+    border-bottom: 1px solid rgb(61, 60, 60);
+ }
+ .modalheader h2{
+    margin: 0.5em;
+    font-size: 1.25rem;
+    font-weight: bold;
+ }
+ .modalbody{
+    color: white;
+    padding: 10px 15px;
+    font-size: 1.125rem;
+ }
+ 
+ 
+ 
+ /* .ytbutton{
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border: 0.1em solid gold;
+    background: gold;
+    padding: 00.25em;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid black;
+   
+ }
+ 
+ .ytbutton:hover{
+    color: white;
+    box-shadow: 0 0 20px red;
+    background-color: orange;
+ } */
+
+
+ .ytbutton{
+    color: var(--clr-neon);
+    border-radius: 5px;
+    font-size: 1.25rem;
+    padding: 0.25em 1.25em;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0.125em solid var(--clr-neon);
+    text-shadow: 0 0 0.5em var(--clr-neon);
+    box-shadow: inset 0 0 1em var(--clr-neon), 0 0 1em var(--clr-neon);
+    position: relative;
+    transition: background-color 100ms linear;
+}
+
+.ytbutton::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 110%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(0.8em) rotateX(40deg) scale(1, 0.35) translateY(-1em);
+    filter: blur(1.3em);
+    opacity: 0.7;
+    /* visibility: hidden; */
+}
+
+.ytbutton:hover{
+    background: var(--clr-neon);
+    color: #000;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+}
+
+@media only screen and (max-width: 700px) {
+    .ytbuttonbutton{
+        font-size: 20px;
+    }
+}
+
+:root{
+    --clr-neon: hsl(317 100% 54%);
+    --clr-neon2: cyan;
+}
+
+.socialicon{
+    /* position: absolute;
+    top: 30%; */
+    height: 2em;
+    width: 2em;
+    margin-bottom: 0.5em;
+    z-index: 11;
+    color: rgb(6, 5, 5);
+    box-shadow: rgba(0, 0, 0, 0.5);
+    margin: 0.25em;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    filter: invert(100%);
+ }
+ .IG:hover{
+   transform: scale(1.1);
+ }
+ .FB:hover{
+    transform: scale(1.1);
+  }
+  .TW:hover{
+    transform: scale(1.1);
+  }
+  .IN:hover{
+    transform: scale(1.1);
+  }
+  .YT:hover{
+    transform: scale(1.1);
+  }
+
+  .socials{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+ }
+
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: 2px solid black; */
+    height: fit-content;
+    width: 97%;
+    margin: auto;
+    /* background-color: black; */
+    /* opacity: 0.5; */
+    
+ }
+ 
+ .navbranding{
+    /* position: absolute;
+    top: 0; */
+    color: #fff;
+    font-size: 1.25em;
+    /* border: 2px solid white; */
+ }
+ 
+ .navbrandlogo{
+    height: 40px;
+    width: 40px;
+    opacity: 1;
+ }
+ .hamburger{
+    cursor: pointer;
+ }
+ .bar{
+    background-color: #fff;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
+    
+ }
+ ul{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+ }
+ li{
+    list-style: none;
+    font-family: 'Oswald', sans-serif;
+
+ }
+
+
+ a{
+    text-decoration: none;
+    
+    color: #fff;
+    
+ }
+
+ 
+ @media(max-width: 2000px){
+    .hamburger{
+       display: block;
+    }
+    /* .hamburger.active2 .bar:nth-child(2){
+       opacity: 0;
+    }
+    .hamburger.active2 .bar:nth-child(1){
+       transform: translate(4px,9px) rotate(45deg);
+    }
+    .hamburger.active2 .bar:nth-child(3){
+       transform: translate(1px,-6px) rotate(-45deg);
+    } */
+    .nav-menu{
+        font-size: 1.125em;
+       position: fixed;
+       left: -120%;
+       top: 40px;
+       gap: 0;
+       /* background: black; */
+       background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+       width: 100%;
+       text-align: center;
+       transition: 0.3s;
+       display: flex;
+       flex-direction: row;
+       width: fit-content;
+       flex-wrap: wrap;
+    }
+ 
+    .nav-item{
+       margin: 0.5em;
+    }
+    .nav-item:hover{
+      text-shadow: 0 0 2px cyan;
+   }
+    .nav-menu.active2{
+       left: 0;
+    }
+ }
